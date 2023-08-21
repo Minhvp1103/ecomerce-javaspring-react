@@ -1,0 +1,5 @@
+export {default as HOME} from './Home'
+export {default as HEADER} from './Header'
+export {default as LOGIN} from './Login'
+export {default as REGISTER} from './Register'
+export {default as NAVIGATION} from './Navigation'
