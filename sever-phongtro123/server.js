@@ -1,6 +1,8 @@
 import express from 'express'
 require('dotenv').config()
 import cors from "cors"
+import initRoutes from './src/routes'
+import connectDB from './src/config/connectDB'
 
 const app = express()
 
@@ -15,7 +17,8 @@ app.use(express.json());
 //Đọc dữ liệu gởi lên dưới dạng FORM DATA từ client
 app.use(express.urlencoded({extended:true}))
 
-app.use('/',(req,res)=>{res.send('server on...')})
+initRoutes(app)
+connectDB()
 
 const port = process.env.PORT || 8888
 const listener = app.listen(port,()=>{
